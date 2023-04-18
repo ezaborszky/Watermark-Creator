@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="application">
+            <div class="interface">
+                <label for="picture">Upload file:</label>
+                <input type="file" name="picture" id="picture">
+                <label for="text">Watermark text:</label>
+                <input value="AI generated" type="text" name="text" id="text">
+                <div class="slidecontainer">
+                <label for="font-size-input">Font size:</label>
+                <input type="range" min="1" max="100" value="40" class="slider" id="font-size">
+            </div>
+                <button id="watermark-button">Create</button>
+                <button>Dowload</button>
+                <div class="slidecontainer">
+                    <label for="myRange">Offset text:</label>
+                    <input type="range" min="-100" max="100" value="0" class="slider" id="myRange">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+                  </div>
+                
+            </div>
+            <div class="display">
+                <canvas id="myCanvas" width="900" height="600"></canvas>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
