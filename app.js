@@ -1,10 +1,13 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 const imageInput = document.getElementById("picture");
-const text = document.getElementById("text").value;
+const text = document.getElementById("text");
 const sliderOne = document.getElementById("myRange")
-const createButton = document.getElementById("watermark-button")
+const createButton = document.getElementById("download-button")
 const fontSizeSlider = document.getElementById("font-size")
+const sliderTwo = document.getElementById("myRange2")
+const rotateSlider = document.getElementById("rotate")
+const opacitySlider = document.getElementById("opacity")
 // const fontSize = document.getElementById("font-size-input").value;
  
 // When a new image is selected, load it into the canvas
@@ -30,17 +33,21 @@ const WaterMark = () => {
       
     //   fontSize = image.height / 15;
       // Set the text style
+      let rotate = rotateSlider.value;
+      let opacity = opacitySlider.value/10;
+
       ctx.font = `${fontSize}px Arial`;
-      ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-      ctx.rotate(-45 * Math.PI / 180);
+      ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+      ctx.rotate(rotate * Math.PI / 180);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       
       // Draw the repeating text watermark
        // Draw the repeating text watermark
        let sliderOneValue = sliderOne.value;
-       const xStep = canvas.width / (canvas.width/canvas.height *2);
-       const yStep = canvas.height / (canvas.width/canvas.height *3);
+       let sliderTwoValue = sliderTwo.value;
+       const xStep = canvas.width / (canvas.width/canvas.height * sliderTwoValue);
+       const yStep = canvas.height / (canvas.width/canvas.height * sliderTwoValue);
        let xStart = -canvas.width / sliderOneValue;
        let yStart = -canvas.height / 3;
        const xEnd = canvas.width * 3;
@@ -51,10 +58,10 @@ const WaterMark = () => {
 
         // xStart = -canvas.width / (6 + Math.floor(Math.random() * 5));
         for (let y = yStart; y < yEnd; y += yStep) {
-          ctx.fillText(text, x, y);
+          ctx.fillText(text.value, x, y);
           ctx.strokeStyle = "black";
           ctx.lineWidth = 0.2;
-          ctx.strokeText(text, x, y);
+          ctx.strokeText(text.value, x, y);
         }
       }
       
@@ -66,9 +73,7 @@ const WaterMark = () => {
 
 
 
-createButton.addEventListener("click", function() {
-    WaterMark();  
-});
+ 
 
 sliderOne.addEventListener("change", function() {
     WaterMark();
@@ -77,3 +82,56 @@ sliderOne.addEventListener("change", function() {
 fontSizeSlider.addEventListener("change", function() {
     WaterMark();
 })
+
+sliderTwo.addEventListener("change", function() {
+    WaterMark();
+})
+
+imageInput.addEventListener("change", function() {
+    WaterMark();
+})
+
+text.addEventListener("input", function() {
+    WaterMark();
+})
+
+rotateSlider.addEventListener("change", function() {
+    WaterMark();
+})
+
+opacitySlider.addEventListener("change", function() {
+    WaterMark();
+})
+
+const downloadImage = () => {
+        // Convert the canvas to a data URL and create a new anchor element with the URL
+        const dataURL = canvas.toDataURL("image/jpeg");
+        const downloadLink = document.createElement("a");
+        downloadLink.href = dataURL;
+        downloadLink.download = "watermarked-image.jpg";
+      
+        // Simulate a click on the anchor element to trigger the download
+        downloadLink.click();
+}
+
+createButton.addEventListener("click", () => {
+    downloadImage();
+  });
+
+  (function() {
+
+    "use strict";
+    
+    canvas.addEventListener( "contextmenu", function(e) {
+        event.preventDefault();
+        downloadImage();
+        
+    });
+
+    canvas.addEventListener( "click", function(e) {
+        event.preventDefault();
+        downloadImage();
+        
+    });
+    
+    })();
