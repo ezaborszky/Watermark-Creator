@@ -8,9 +8,9 @@ const fontSizeSlider = document.getElementById("font-size")
 const sliderTwo = document.getElementById("myRange2")
 const rotateSlider = document.getElementById("rotate")
 const opacitySlider = document.getElementById("opacity")
-
+// const fontSize = document.getElementById("font-size-input").value;
  
-//When a new image is selected, load it into the canvas
+// When a new image is selected, load it into the canvas
 
 
 const WaterMark = () => {
@@ -31,7 +31,7 @@ const WaterMark = () => {
   // Draw the image on the canvas
   ctx.drawImage(image, 0, 0);
       
-    fontSize = image.height / 15;
+    //   fontSize = image.height / 15;
       // Set the text style
       let rotate = rotateSlider.value;
       let opacity = opacitySlider.value/10;
@@ -48,7 +48,7 @@ const WaterMark = () => {
        let sliderTwoValue = sliderTwo.value;
        const xStep = canvas.width / (canvas.width/canvas.height * sliderTwoValue);
        const yStep = canvas.height / (canvas.width/canvas.height * sliderTwoValue);
-       let xStart = -canvas.width;
+       let xStart = -canvas.width / sliderOneValue;
        let yStart = -canvas.height / 3;
        const xEnd = canvas.width * 3;
        const yEnd = canvas.height * 3;
@@ -56,7 +56,7 @@ const WaterMark = () => {
       
       for (let x = xStart; x < xEnd; x += xStep) {
 
-        //xStart = -canvas.width / (6 + Math.floor(Math.random() * 5));
+        // xStart = -canvas.width / (6 + Math.floor(Math.random() * 5));
         for (let y = yStart; y < yEnd; y += yStep) {
           ctx.fillText(text.value, x, y);
           ctx.strokeStyle = "black";
