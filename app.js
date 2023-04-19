@@ -43,7 +43,7 @@ const WaterMark = () => {
       let opacity = opacitySlider.value/10;
 
       ctx.font = `small-caps ${fontSize}px Arial`;
-      ctx.fillStyle = `rgba(235, 235, 235, ${opacity})`;
+      ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
       ctx.rotate(-50 * Math.PI / 180);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
