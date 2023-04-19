@@ -2,11 +2,11 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 const imageInput = document.getElementById("picture");
 const text = document.getElementById("text");
-const sliderOne = document.getElementById("myRange")
+//const sliderOne = document.getElementById("myRange")
 const createButton = document.getElementById("download-button")
 const fontSizeSlider = document.getElementById("font-size")
 const sliderTwo = document.getElementById("myRange2")
-const rotateSlider = document.getElementById("rotate")
+//const rotateSlider = document.getElementById("rotate")
 const opacitySlider = document.getElementById("opacity")
 // const fontSize = document.getElementById("font-size-input").value;
  
@@ -44,11 +44,11 @@ const WaterMark = () => {
       
       // Draw the repeating text watermark
        // Draw the repeating text watermark
-       let sliderOneValue = sliderOne.value;
+       //let sliderOneValue = sliderOne.value;
        let sliderTwoValue = sliderTwo.value;
        const xStep = canvas.width / (canvas.width/canvas.height * sliderTwoValue);
        const yStep = canvas.height / (canvas.width/canvas.height * sliderTwoValue);
-       let xStart = -canvas.width / sliderOneValue;
+       let xStart = -canvas.width;
        let yStart = -canvas.height / 3;
        const xEnd = canvas.width * 3;
        const yEnd = canvas.height * 3;
@@ -75,9 +75,9 @@ const WaterMark = () => {
 
  
 
-sliderOne.addEventListener("change", function() {
-    WaterMark();
-})
+//sliderOne.addEventListener("change", function() {
+//    WaterMark();
+//})
 
 fontSizeSlider.addEventListener("change", function() {
     WaterMark();
@@ -95,9 +95,9 @@ text.addEventListener("input", function() {
     WaterMark();
 })
 
-rotateSlider.addEventListener("change", function() {
-    WaterMark();
-})
+//rotateSlider.addEventListener("change", function() {
+//    WaterMark();
+//})
 
 opacitySlider.addEventListener("change", function() {
     WaterMark();
