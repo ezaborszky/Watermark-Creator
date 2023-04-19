@@ -33,12 +33,12 @@ const WaterMark = () => {
       
     //   fontSize = image.height / 15;
       // Set the text style
-      let rotate = rotateSlider.value;
+      //let rotate = rotateSlider.value;
       let opacity = opacitySlider.value/10;
 
       ctx.font = `${fontSize}px Arial`;
       ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-      ctx.rotate(rotate * Math.PI / 180);
+      ctx.rotate(45 * Math.PI / 180);
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       
