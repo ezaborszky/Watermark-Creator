@@ -1,17 +1,45 @@
 
 body {
     background-color: #e5e5f7;
-    
+    overflow: hidden;
     background-image: radial-gradient( ellipse farthest-corner at 10px 10px , #333cdb, #444cf7 50%, #d5d5f8 50%);
     background-size: 50px 50px;
+    margin: 0px;
+}
+
+a {
+    filter: drop-shadow(0 0 0.75rem rgb(231, 226, 146));
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.781);
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+#github-logo {
+    height: 1.5rem;
+    width: auto;
+}
+
+.impressum {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background: rgba(139, 139, 139, 0.555);
+    width: 100vw;
+    padding: 3px;
+    margin: 0px;
 }
 
 .wrapper {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+    margin: 0px;
     
    
 }
