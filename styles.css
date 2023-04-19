@@ -84,7 +84,7 @@ body {
     justify-content: center;
 }
 
-#myRange2 {
+#myRange {
  opacity: 0;
  filter: grayscale(1);
 }
