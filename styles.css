@@ -83,13 +83,3 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-#myRange {
- opacity: 0;
- filter: grayscale(1);
-}
-
-#rotate {
-    opacity: 0;
-    filter: grayscale(1);
-}
