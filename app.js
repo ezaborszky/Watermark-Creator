@@ -8,7 +8,7 @@ const fontSizeSlider = document.getElementById("font-size")
 const sliderTwo = document.getElementById("myRange2")
 const rotateSlider = document.getElementById("rotate")
 const opacitySlider = document.getElementById("opacity")
-const fontSize = document.getElementById("font-size-input").value;
+
  
 //When a new image is selected, load it into the canvas
 
