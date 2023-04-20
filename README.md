@@ -5,6 +5,9 @@ A simple website using HTML5 canvas and Javascript to add repeating watermarks t
 
 Font size is calculated image dimensions and the length of the watermark text. User car further increase or reduce font size using a slider.
 
+![image](https://user-images.githubusercontent.com/124446749/233339809-5546cadd-4546-4792-8253-6bc26fb0ef6b.png)
+
+
 The X and Y values, the spacing and the frequency of the watermark text is also calculated based on the diagonal lenght of the image. Y-frequency (ie. how many lines of text is drawn) can be manually adjusted. 
 
 Context menu is disabled to prevent the user from accidentally saving the image as .png to avoid conflict with certain content management systems. 
